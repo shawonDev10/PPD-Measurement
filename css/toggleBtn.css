@@ -1,0 +1,51 @@
+.toggle {
+    display: flex;
+}
+
+.toggle-btn {
+    --toggle-size: clamp(6px, .7vw, 12.5rem);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6.25em;
+    height: 3.125em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #202020), color-stop(50%, #efefef)) no-repeat;
+    background: -o-linear-gradient(left, #202020 50%, #efefef 50%) no-repeat;
+    background: linear-gradient(to right, #202020 50%, #efefef 50%) no-repeat;
+    background-size: 205%;
+    background-position: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+}
+
+.toggle-btn::before {
+    content: "";
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    top: 0.438em;
+    left: 0.438em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #202020), color-stop(50%, #efefef)) no-repeat;
+    background: -o-linear-gradient(left, #202020 50%, #efefef 50%) no-repeat;
+    background: linear-gradient(to right, #202020 50%, #efefef 50%) no-repeat;
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.toggle-btn:checked::before {
+    left: calc(100% - 2.25em - 0.438em);
+    background-position: 0;
+}
+
+.toggle-btn:checked {
+    background-position: 100%;
+}
